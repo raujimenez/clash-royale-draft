@@ -5,22 +5,28 @@ import { Aid } from "grommet-icons";
 const boxStyles = {
   paddingRight: "20px",
   paddingTop: "15px",
-  paddingBottom: "15px"
+  paddingBottom: "15px",
+  textAlign: 'center'
 };
+
+const boxAnimation = {
+  type: "slideDown",
+  size: 'large'
+}
+
 
 export default function Header() {
   const [supportHover, setSupportHover] = useState(false);
 
-  
   const linkStyle = {
     padding: "10px",
     textDecoration: "none",
     color: "#ccdded",
-    backgroundColor: supportHover ? "#171621" : "#2b283d"
+    backgroundColor: supportHover ? "#171621" : "#2b283d",
   };
 
   return (
-    <Box align="end" style={boxStyles}>
+    <Box align="end" animation={boxAnimation} style={boxStyles}>
       <div>
         <a
           style={linkStyle}
