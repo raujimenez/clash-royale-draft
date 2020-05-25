@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {BrowserRouter as Router} from "react-router"
 import { Box } from "grommet";
 import { Aid } from "grommet-icons";
 
@@ -26,7 +27,7 @@ export default function Header() {
 
   return (
     <Box align="end" animation={boxAnimation} style={boxStyles}>
-      <div>
+      <div style={{zIndex: 9999999}}>
         <a
           style={linkStyle}
           href="https://www.feedingamerica.org/take-action"
