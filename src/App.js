@@ -8,7 +8,7 @@ import Announcer from "./components/Announcer.jsx";
 import LandingPageButtons from "./components/LandingPageButtons.jsx";
 import ParticleComponent from "./components/ParticleComponent";
 
-const accentColor = "#33b04a";
+// const accentColor = "#33b04a";
 
 const theme = {
   global: {

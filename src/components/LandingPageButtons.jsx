@@ -18,10 +18,6 @@ const boxAnimation = [
   },
 ];
 
-const rowStyles = {
-  paddingTop: "10vh",
-};
-
 export default function LandingPageButtons() {
   const [defaultCardsHover, setDefaultCardsHover] = useState(false);
   const [gameIdHover, setGameIdHover] = useState(false);
@@ -35,6 +31,7 @@ export default function LandingPageButtons() {
             marginRight: "15%",
             backgroundColor: gameIdHover ? "#171621" : "#3a3b61",
             boxShadow: "20px 20px 50px 10px #000000;",
+            userSelect: 'none'
           }}
           onMouseEnter={() => setGameIdHover(true)}
           onMouseLeave={() => setGameIdHover(false)}
@@ -46,6 +43,7 @@ export default function LandingPageButtons() {
             padding: "18px",
             backgroundColor: defaultCardsHover ? "#171621" : "#3a3b61",
             boxShadow: "20px 20px 50px 10px #000000;",
+            userSelect: 'none'
           }}
           onMouseEnter={() => setDefaultCardsHover(true)}
           onMouseLeave={() => setDefaultCardsHover(false)}
