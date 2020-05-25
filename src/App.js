@@ -1,6 +1,8 @@
 import React from 'react';
 import { Grommet } from 'grommet';
+
 import Header from './components/Header.jsx';
+import Announcer from './components/Announcer.jsx';
 
 const accentColor = "#33b04a"
 
@@ -19,6 +21,7 @@ function App() {
   return (
     <Grommet theme={theme}>
       <Header />
+      <Announcer />
     </Grommet>
   );
 }

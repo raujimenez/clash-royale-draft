@@ -6,14 +6,13 @@ const boxStyles = {
   paddingRight: "20px",
   paddingTop: "15px",
   paddingBottom: "15px",
-  textAlign: 'center'
+  textAlign: "center",
 };
 
 const boxAnimation = {
   type: "slideDown",
-  size: 'large'
-}
-
+  size: "large",
+};
 
 export default function Header() {
   const [supportHover, setSupportHover] = useState(false);
