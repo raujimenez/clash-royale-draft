@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import shuffle from "shuffle-array";
 import getPlayersInfo from "../services/getPlayersInfo.js";
-
+import DeckDisplay from "./DeckDisplay.jsx";
 import { Box } from "grommet";
 
 const boxAnimation = {
@@ -13,10 +13,13 @@ export default function Drafter() {
   const [cardImages, setCardImages] = useState(null);
   const [imageHover, setImageHover] = useState(-1);
   const [cardsSelected, setCardsSelected] = useState([]);
+  const [names, setNames] = useState([])
+  const [currentPlayer, setCurrentPlayer] = useState(0);
 
   useEffect(() => {
     async function getPlayersData() {
       const response = await getPlayersInfo();
+      setNames([response.data.playerOne.name, response.data.playerTwo.name]);
       setCardImages(
         shuffle(
           Object.keys(response.data.playerOne.cards).map((key, index) => (
@@ -38,7 +41,11 @@ export default function Drafter() {
   }, []);
 
   return (
-    <React.Fragment>
+    <div>
+      <Box align="center" animation={boxAnimation} style={{fontSize: '5vh', paddingBottom: '5%', paddingTop: '5%'}}>
+          Card Deck for {currentPlayer === 0 ? names[0] : names[1]}
+      </Box>
+      <DeckDisplay playerCards={cardsSelected}/>
       <Box align="center" animation={boxAnimation}>
         <div style={{ display: "grid", gridColumn: 3 }}>
           {cardImages == null
@@ -62,7 +69,7 @@ export default function Drafter() {
                       setImageHover(-1);
                     }}
                     onClick={() => {
-                      setCardsSelected(cardsSelected.concat(image.props.src));
+                      setCardsSelected(cardsSelected.concat([image.props.src]));
                       setCardImages(cardImages.slice(3));
                     }}
                   >
@@ -72,6 +79,6 @@ export default function Drafter() {
               })}
         </div>
       </Box>
-    </React.Fragment>
+    </div>
   );
 }
