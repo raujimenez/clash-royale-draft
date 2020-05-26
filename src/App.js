@@ -8,6 +8,7 @@ import Header from "./components/Header.jsx";
 import Announcer from "./components/Announcer.jsx";
 import LandingPageButtons from "./components/LandingPageButtons.jsx";
 import ClashRoyaleIdInput from "./components/ClashRoyaleIdInput.jsx";
+import Drafter from './components/Drafter.jsx';
 
 // const accentColor = "#33b04a";
 
@@ -28,6 +29,7 @@ function App() {
         <Switch>
           <Router path="/drafter" exact>
             <Header />
+            <Drafter />
           </Router>
           <Route path="/clashIdInput" exact>
             <Header />
