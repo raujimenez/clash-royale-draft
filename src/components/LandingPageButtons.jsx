@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Box } from "grommet";
 
+import { Link } from "react-router-dom";
+
 const boxStyles = {
   fontSize: "5vh",
   textAlign: "center",
@@ -23,27 +25,28 @@ export default function LandingPageButtons() {
   const [gameIdHover, setGameIdHover] = useState(false);
 
   return (
-    <Box animation={boxAnimation} align="middle" style={boxStyles}>
+    <Box animation={boxAnimation} style={boxStyles}>
       <div style={{ paddingBottom: "4vh", paddingTop: "8vh" }}>
-        <span
+        <Link
+          to="/clashIdInput"
           style={{
+            color: "#ccdded",
+            textDecoration: "none",
             padding: "18px",
             marginRight: "15%",
             backgroundColor: gameIdHover ? "#171621" : "#3a3b61",
-            boxShadow: "20px 20px 50px 10px #000000;",
-            userSelect: 'none'
+            userSelect: "none",
           }}
           onMouseEnter={() => setGameIdHover(true)}
           onMouseLeave={() => setGameIdHover(false)}
         >
           Use Clash Royale ID
-        </span>
+        </Link>
         <span
           style={{
             padding: "18px",
             backgroundColor: defaultCardsHover ? "#171621" : "#3a3b61",
-            boxShadow: "20px 20px 50px 10px #000000;",
-            userSelect: 'none'
+            userSelect: "none",
           }}
           onMouseEnter={() => setDefaultCardsHover(true)}
           onMouseLeave={() => setDefaultCardsHover(false)}

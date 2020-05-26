@@ -26,7 +26,7 @@ export default function Header() {
 
   return (
     <Box align="end" animation={boxAnimation} style={boxStyles}>
-      <div style={{zIndex: 9999999}}>
+      <div style={{ zIndex: 9999999 }}>
         <a
           style={linkStyle}
           href="https://www.feedingamerica.org/take-action"

@@ -1,12 +1,13 @@
 import React from "react";
+
 import { Grommet } from "grommet";
 
-import './components/ParticleComponent';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Header from "./components/Header.jsx";
 import Announcer from "./components/Announcer.jsx";
 import LandingPageButtons from "./components/LandingPageButtons.jsx";
-import ParticleComponent from "./components/ParticleComponent";
+import ClashRoyaleIdInput from "./components/ClashRoyaleIdInput.jsx";
 
 // const accentColor = "#33b04a";
 
@@ -23,10 +24,23 @@ const theme = {
 function App() {
   return (
     <Grommet theme={theme}>
-        <ParticleComponent /> 
-        <Header />
-        <Announcer />
-        <LandingPageButtons />
+      <Router>
+        <Switch>
+          <Router path="/drafter" exact>
+            <Header />
+          </Router>
+          <Route path="/clashIdInput" exact>
+            <Header />
+            <Announcer />
+            <ClashRoyaleIdInput />
+          </Route>
+          <Route path="/" exact>
+            <Header />
+            <Announcer />
+            <LandingPageButtons />
+          </Route>
+        </Switch>
+      </Router>
     </Grommet>
   );
 }
