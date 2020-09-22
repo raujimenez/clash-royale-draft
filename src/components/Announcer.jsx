@@ -1,5 +1,4 @@
 import React from "react";
-import { Box } from "grommet";
 
 const boxStyles = {
   paddingTop: "10%",
@@ -8,15 +7,10 @@ const boxStyles = {
   textAlign: "center",
 };
 
-const boxAnimation = {
-  type: "slideDown",
-  size: "xlarge",
-};
-
 export default function Announcer() {
   return (
-    <Box animation={boxAnimation} style={boxStyles} align="center">
+    <div style={boxStyles}>
       Clash Royale Drafter
-    </Box>
+    </div>
   );
 }
