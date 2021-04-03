@@ -1,47 +1,34 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
 
-// TODO: redo styles to recenter buttons
-const containerStyle = {
-  fontSize: "50px",
-  textAlign: "center",
-  margin: "auto",
-};
+const inputStyles = {
+    height: '10vh',
+    marginBottom: '2vh',
+    borderRadius: '10px',
+    width: '80%',
+    fontSize: '2em',
+    color: 'white',
+    backgroundColor: '#2b203d',
+    borderStyle: 'solid',
+    textTransform: 'uppercase'
+}
 
-const generateStyles = (control) => {
-  return {
-    color: "#ccdded",
-    textDecoration: "none",
-    padding: "18px",
-    marginRight: "15%",
-    backgroundColor: control ? "#171621" : "#3a3b61",
-    userSelect: "none",
-  };
-};
+const outContainerStyle = {
+    textAlign: 'center',
+    fontSize: '1.5rem'
+}
 
 export default function LandingPageButtons() {
-  const [defaultCardsHover, setDefaultCardsHover] = useState(false);
-  const [gameIdHover, setGameIdHover] = useState(false);
-
-  return (
-    <div style={containerStyle}>
-      <Link
-        to="/clashIdInput"
-        style={generateStyles(gameIdHover)}
-        onMouseEnter={() => setGameIdHover(true)}
-        onMouseLeave={() => setGameIdHover(false)}
-      >
-        Use Clash Royale ID
-      </Link>
-
-      <Link
-        to="/drafter"
-        style={generateStyles(defaultCardsHover)}
-        onMouseEnter={() => setDefaultCardsHover(true)}
-        onMouseLeave={() => setDefaultCardsHover(false)}
-      >
-        Choose Default Cards
-      </Link>
-    </div>
-  );
+    
+    
+    return (
+        <div style={outContainerStyle}>
+            <div>
+                <input style={inputStyles} placeholder="Player 1 ID" maxLength={8}/>
+            </div>
+            <div>
+                <input style={inputStyles} placeholder="Player 2 ID" maxLength={8}/>
+            </div>
+            Do not include the #
+        </div>
+    )
 }
