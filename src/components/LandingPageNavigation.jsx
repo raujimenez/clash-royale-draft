@@ -1,5 +1,5 @@
 import React from 'react';
-import LandingPageButton from './inputs/LandingPageButton';
+import LinkButton from './inputs/LinkButton';
 
 const styles = {
     textAlign: 'center'
@@ -8,13 +8,13 @@ const styles = {
 export default function LandingPageNavigation(props) {
     return (
         <div style={styles}>
-            <LandingPageButton 
+            <LinkButton 
                 title="Draft with all cards" 
                 toLocation="/alldraft"
             />
-            <LandingPageButton 
+            <LinkButton 
                 title="Use Player's ID" 
-                toLocation="/playerdraft"
+                toLocation="/playerdraft/chooser"
             />
         </div>
     )
