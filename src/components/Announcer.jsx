@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 
-const boxStyles = {
-  paddingTop: "10%",
-  paddingBottom: "10%",
-  fontSize: "10vh",
-  textAlign: "center",
-};
+const styles = {
+    marginTop: '2vh',
+    marginBottom: '2vh',
+    fontSize: '2.5rem',
+    textAlign: 'center'
+}
 
 export default function Announcer() {
-  return (
-    <div style={boxStyles}>
-      Clash Royale Drafter
-    </div>
-  );
+    return (
+        <div style={styles}>
+            Clash Royale Draft
+        </div>
+    )
 }
