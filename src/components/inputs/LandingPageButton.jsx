@@ -5,12 +5,12 @@ const styleGenerator = (isHover) => {
     return {
         backgroundColor: (isHover) ? 'black' : '#302e57',
         textAlign: 'center',
-        marginBottom: '2vh',
         fontSize: '1.75em',
         borderRadius: '2vw',
         padding: '4vh',
-        color: 'white',
+        color: '#ccdded',
         margin: 'auto',
+        marginBottom: '2vh',
         width: '70%'
     }
 }
